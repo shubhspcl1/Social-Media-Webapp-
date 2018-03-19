@@ -1,0 +1,16 @@
+current directory: /home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+/home/shubh_spcl/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20180319-14308-553wpi.rb extconf.rb
+
+current directory: /home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" clean
+make: *** No rule to make target 'clean'.  Stop.
+
+current directory: /home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+current directory: /home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" install
+echo "Nada."
+Nada.

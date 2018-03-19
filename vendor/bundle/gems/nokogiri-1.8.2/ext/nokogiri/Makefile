@@ -12,12 +12,12 @@ NULLCMD = :
 #### Start of system configuration section. ####
 
 srcdir = .
-topdir = /usr/local/include/ruby-2.5.0
+topdir = /home/shubh_spcl/.rbenv/versions/2.4.1/include/ruby-2.4.0
 hdrdir = $(topdir)
-arch_hdrdir = /usr/local/include/ruby-2.5.0/x86_64-linux
+arch_hdrdir = /home/shubh_spcl/.rbenv/versions/2.4.1/include/ruby-2.4.0/x86_64-linux
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
-prefix = $(DESTDIR)/usr/local
+prefix = $(DESTDIR)/home/shubh_spcl/.rbenv/versions/2.4.1
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
@@ -31,8 +31,8 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
-sitearchdir = $(DESTDIR)./.gem.20180312-28521-vz9f2o
-sitelibdir = $(DESTDIR)./.gem.20180312-28521-vz9f2o
+sitearchdir = $(DESTDIR)./.gem.20180319-14308-19hm6y5
+sitelibdir = $(DESTDIR)./.gem.20180319-14308-19hm6y5
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -67,8 +67,8 @@ CC = gcc
 CXX = g++
 LIBRUBY = $(LIBRUBY_A)
 LIBRUBY_A = lib$(RUBY_SO_NAME)-static.a
-LIBRUBYARG_SHARED = -Wl,-rpath,$(libdir) -L$(libdir) 
-LIBRUBYARG_STATIC = -Wl,-rpath,$(libdir) -L$(libdir) -l$(RUBY_SO_NAME)-static
+LIBRUBYARG_SHARED = -Wl,-R$(libdir) -L$(libdir) 
+LIBRUBYARG_STATIC = -Wl,-R$(libdir) -L$(libdir) -l$(RUBY_SO_NAME)-static
 empty =
 OUTFLAG = -o $(empty)
 COUTFLAG = -o $(empty)
@@ -77,17 +77,17 @@ CSRCFLAG = $(empty)
 RUBY_EXTCONF_H = 
 cflags   = $(optflags) $(debugflags) $(warnflags)
 cxxflags = $(optflags) $(debugflags) $(warnflags)
-optflags = -O3
+optflags = -O3 -fno-fast-math
 debugflags = -ggdb3
 warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wno-maybe-uninitialized
 CCDLFLAGS = -fPIC
 CFLAGS   = $(CCDLFLAGS) $(cflags)  -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -DNOKOGIRI_USE_PACKAGED_LIBRARIES $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
-CPPFLAGS = -DHAVE_XMLPARSEDOC -DHAVE_XSLTPARSESTYLESHEETDOC -DHAVE_EXSLTFUNCREGISTER -DHAVE_XMLHASFEATURE -DHAVE_XMLFIRSTELEMENTCHILD -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETPARSERSTRUCTUREDERRORS -I/home/shubh_spcl/socialchemy/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/include -I/home/shubh_spcl/socialchemy/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxml2/2.9.7/include/libxml2 -I/home/shubh_spcl/socialchemy/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxml2/2.9.7/include/libxml2  $(DEFS) $(cppflags) "-DNOKOGIRI_LIBXML2_PATH=\"/home/shubh_spcl/socialchemy/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxml2/2.9.7\"" "-DNOKOGIRI_LIBXML2_PATCHES=\"\"" "-DNOKOGIRI_LIBXSLT_PATH=\"/home/shubh_spcl/socialchemy/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxslt/1.1.32\"" "-DNOKOGIRI_LIBXSLT_PATCHES=\"\""
+CPPFLAGS = -DHAVE_XMLPARSEDOC -DHAVE_XSLTPARSESTYLESHEETDOC -DHAVE_EXSLTFUNCREGISTER -DHAVE_XMLHASFEATURE -DHAVE_XMLFIRSTELEMENTCHILD -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETPARSERSTRUCTUREDERRORS -I/home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/include -I/home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxml2/2.9.7/include/libxml2 -I/home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxml2/2.9.7/include/libxml2 -I/home/shubh_spcl/.rbenv/versions/2.4.1/include  $(DEFS) $(cppflags) "-DNOKOGIRI_LIBXML2_PATH=\"/home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxml2/2.9.7\"" "-DNOKOGIRI_LIBXML2_PATCHES=\"\"" "-DNOKOGIRI_LIBXSLT_PATH=\"/home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxslt/1.1.32\"" "-DNOKOGIRI_LIBXSLT_PATCHES=\"\""
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
-ldflags  = -L. -fstack-protector -rdynamic -Wl,-export-dynamic
-dldflags = -Wl,--compress-debug-sections=zlib 
+ldflags  = -L. -L/home/shubh_spcl/.rbenv/versions/2.4.1/lib  -fstack-protector -rdynamic -Wl,-export-dynamic
+dldflags = -L/home/shubh_spcl/.rbenv/versions/2.4.1/lib  -Wl,--compress-debug-sections=zlib 
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
 LDSHARED = $(CC) -shared
@@ -104,7 +104,7 @@ RUBY_BASE_NAME = ruby
 
 arch = x86_64-linux
 sitearch = $(arch)
-ruby_version = 2.5.0
+ruby_version = 2.4.0
 ruby = $(bindir)/$(RUBY_BASE_NAME)
 RUBY = $(ruby)
 ruby_headers = $(hdrdir)/ruby.h $(hdrdir)/ruby/backward.h $(hdrdir)/ruby/ruby.h $(hdrdir)/ruby/defines.h $(hdrdir)/ruby/missing.h $(hdrdir)/ruby/intern.h $(hdrdir)/ruby/st.h $(hdrdir)/ruby/subst.h $(arch_hdrdir)/ruby/config.h
@@ -122,8 +122,8 @@ TOUCH = exit >
 #### End of system configuration section. ####
 
 preload = 
-libpath = . $(libdir) /home/shubh_spcl/socialchemy/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxml2/2.9.7/lib /home/shubh_spcl/socialchemy/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib
-LIBPATH =  -L. -L$(libdir) -Wl,-rpath,$(libdir) -L/home/shubh_spcl/socialchemy/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxml2/2.9.7/lib -Wl,-rpath,/home/shubh_spcl/socialchemy/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxml2/2.9.7/lib -L/home/shubh_spcl/socialchemy/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib -Wl,-rpath,/home/shubh_spcl/socialchemy/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib
+libpath = . $(libdir) /home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxml2/2.9.7/lib /home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib
+LIBPATH =  -L. -L$(libdir) -Wl,-R$(libdir) -L/home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxml2/2.9.7/lib -Wl,-R/home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxml2/2.9.7/lib -L/home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib -Wl,-R/home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib
 DEFFILE = 
 
 CLEANFILES = mkmf.log
@@ -134,7 +134,7 @@ extout =
 extout_prefix = 
 target_prefix = /nokogiri
 LOCAL_LIBS = 
-LIBS =  /home/shubh_spcl/socialchemy/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib/libexslt.a -lm -ldl -lz /home/shubh_spcl/socialchemy/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxml2/2.9.7/lib/libxml2.a /home/shubh_spcl/socialchemy/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib/libxslt.a -ldl -lm -lz /home/shubh_spcl/socialchemy/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxml2/2.9.7/lib/libxml2.a -lpthread -ldl -lcrypt -lm   -lc 
+LIBS =  /home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib/libexslt.a -lm -ldl -lz /home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxml2/2.9.7/lib/libxml2.a /home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxslt/1.1.32/lib/libxslt.a -ldl -lm -lz /home/shubh_spcl/Social-Media-Webapp-/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-pc-linux-gnu/libxml2/2.9.7/lib/libxml2.a -lpthread -ldl -lcrypt -lm   -lc 
 ORIG_SRCS = html_document.c html_element_description.c html_entity_lookup.c html_sax_parser_context.c html_sax_push_parser.c nokogiri.c xml_attr.c xml_attribute_decl.c xml_cdata.c xml_comment.c xml_document.c xml_document_fragment.c xml_dtd.c xml_element_content.c xml_element_decl.c xml_encoding_handler.c xml_entity_decl.c xml_entity_reference.c xml_io.c xml_libxml2_hacks.c xml_namespace.c xml_node.c xml_node_set.c xml_processing_instruction.c xml_reader.c xml_relax_ng.c xml_sax_parser.c xml_sax_parser_context.c xml_sax_push_parser.c xml_schema.c xml_syntax_error.c xml_text.c xml_xpath_context.c xslt_stylesheet.c
 SRCS = $(ORIG_SRCS) 
 OBJS = html_document.o html_element_description.o html_entity_lookup.o html_sax_parser_context.o html_sax_push_parser.o nokogiri.o xml_attr.o xml_attribute_decl.o xml_cdata.o xml_comment.o xml_document.o xml_document_fragment.o xml_dtd.o xml_element_content.o xml_element_decl.o xml_encoding_handler.o xml_entity_decl.o xml_entity_reference.o xml_io.o xml_libxml2_hacks.o xml_namespace.o xml_node.o xml_node_set.o xml_processing_instruction.o xml_reader.o xml_relax_ng.o xml_sax_parser.o xml_sax_parser_context.o xml_sax_push_parser.o xml_schema.o xml_syntax_error.o xml_text.o xml_xpath_context.o xslt_stylesheet.o
@@ -160,7 +160,7 @@ CLEANLIBS     = $(TARGET_SO)
 CLEANOBJS     = *.o  *.bak
 
 all:    $(DLLIB)
-static: $(STATIC_LIB)
+static: $(STATIC_LIB) install-rb
 .PHONY: all install static install-so install-rb
 .PHONY: clean clean-so clean-static clean-rb
 
